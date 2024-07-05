@@ -1,0 +1,7 @@
+<div>
+    <button (click)="onSelectedUser()">
+        <!-- <img [src]="'assets/users/' +selectdUser.avatar" [alt]="selectdUser.name"/> Property of src -->
+        <img [src]="imagePath"/>  <!--Can also use GETTERS which is a feature of angular-->
+        <span>{{ selectdUser.name}}</span> <!--String interpollation-->
+    </button>
+</div>
