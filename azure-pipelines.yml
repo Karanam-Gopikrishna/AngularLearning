@@ -1,22 +1,11 @@
 # Node.js with Angular
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Pay-As-You-Go(2)(7f4e16ea-6d88-4f7a-8aa7-efa95ea40ba1)'
+    appType: 'webApp'
+    appName: 'webtask'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
 # Build a Node.js project that uses Angular.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
-trigger:
-- main
-
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    npm install -g @angular/cli
-    npm install
-    ng build --prod
-  displayName: 'npm install and build'
